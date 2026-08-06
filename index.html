@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>טיול זוגי שוקרון ברומא</title>
-    <!-- Google Fonts: Assistant -->
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6.4.0 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
             --brown: #5C4033;
-            --blue: #2B5C8F; /* כחול עמוק ואלגנטי */
-            --gold: #C5A059; /* זהב לנגיעות עדינות */
+            --blue: #2B5C8F;
+            --gold: #C5A059;
             --bg-light: #F7F7F7;
             --white: #FFFFFF;
         }
@@ -26,227 +24,98 @@
             max-width: 500px;
             padding: 15px;
             direction: rtl;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        /* Header Styles */
         header {
             text-align: center;
-            margin-bottom: 25px;
+            margin-top: 20px;
         }
 
         .logo {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            border: 3px solid var(--blue);
+            border: 4px solid var(--blue);
             display: block;
-            margin: 0 auto 10px auto;
+            margin: 0 auto 20px auto;
             object-fit: cover;
-        }
-
-        h1, h2 {
-            background-color: transparent;
-            margin: 5px 0;
-            line-height: 1.2;
         }
 
         h1 {
             color: var(--brown);
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 800;
-        }
-
-        h2 {
-            color: var(--blue);
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        /* Quick Links */
-        .quick-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 15px;
-        }
-
-        .quick-link-item {
-            background-color: var(--blue);
-            color: var(--white);
-            padding: 8px 16px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            border: none;
-            transition: 0.2s;
-        }
-
-        .quick-link-item i {
-            font-size: 1rem;
-            color: var(--gold); /* נגיעות זהב בכפתורים */
-        }
-
-        .quick-link-item:hover {
-            background-color: #1a426b;
-        }
-
-        /* Day Cards */
-        .day-card {
-            background: var(--white);
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.06);
-            margin-bottom: 20px;
-            overflow: hidden;
-            border-top: 5px solid var(--blue);
-        }
-
-        .day-title {
-            background-color: rgba(43, 92, 143, 0.1); /* תכלת/כחול בהיר */
-            color: var(--brown);
-            padding: 15px;
             margin: 0;
-            font-size: 1.4rem;
+        }
+
+        /* Hero Section */
+        .hero-message {
             text-align: center;
-            font-weight: 800;
-        }
-
-        /* Smart Dropdowns */
-        details {
-            border-bottom: 1px solid #eee;
-        }
-
-        details:last-child {
-            border-bottom: none;
-        }
-
-        summary {
-            padding: 15px;
-            font-weight: 700;
-            color: var(--brown);
-            cursor: pointer;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.1rem;
-            transition: background-color 0.2s;
-        }
-
-        summary:hover {
-            background-color: #fafafa;
-        }
-
-        summary::-webkit-details-marker {
-            display: none;
-        }
-
-        summary::after {
-            content: '\f078'; /* FontAwesome Chevron-down */
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            color: var(--blue);
-            transition: transform 0.3s ease;
-        }
-
-        details[open] summary::after {
-            transform: rotate(180deg);
-        }
-
-        .details-content {
-            padding: 15px;
-            background-color: #fcfcfc;
-            border-top: 1px dashed #eee;
-        }
-
-        .info-row {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 12px;
-            font-size: 0.95rem;
-            line-height: 1.4;
-            color: #444;
-        }
-
-        .info-row:last-child {
-            margin-bottom: 0;
-        }
-
-        .info-row i {
-            margin-left: 10px;
-            color: var(--gold); /* נגיעות זהב */
-            width: 20px;
-            text-align: center;
-            font-size: 1.1rem;
-            flex-shrink: 0;
-            margin-top: 3px;
-        }
-
-        /* Nav Links */
-        .nav-link {
-            color: var(--blue);
-            font-weight: 700;
-            text-decoration: none;
-            background: rgba(43, 92, 143, 0.1);
-            padding: 4px 10px;
-            border-radius: 6px;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: 0.2s;
-        }
-
-        .nav-link:hover {
-            background: rgba(43, 92, 143, 0.2);
-        }
-
-        /* Table */
-        .cost-table-wrapper {
+            padding: 40px 20px;
             background: var(--white);
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.06);
-            margin-bottom: 20px;
-            border-top: 5px solid var(--brown);
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid var(--gold);
         }
 
-        .cost-table-wrapper h3 {
+        .hero-message h2 {
             color: var(--blue);
+            font-size: 1.6rem;
+            margin: 0 0 10px 0;
+        }
+
+        /* Review Section */
+        .review-box {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 12px;
+            border-top: 4px solid var(--gold);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .review-box h3 {
+            color: var(--brown);
             margin-top: 0;
             text-align: center;
         }
 
-        table {
+        textarea {
             width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9rem;
+            height: 100px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Assistant', sans-serif;
+            box-sizing: border-box;
+            resize: none;
+            margin-bottom: 10px;
         }
 
-        th, td {
-            border: 1px solid #eee;
-            padding: 10px 5px;
-            text-align: center;
-        }
-
-        th {
-            background-color: var(--brown);
+        .send-btn {
+            width: 100%;
+            background-color: var(--blue);
             color: var(--white);
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
             font-weight: 700;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.2s;
         }
 
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
+        .send-btn:hover {
+            background-color: var(--brown);
         }
 
-        /* Footer */
         footer {
             text-align: center;
-            margin-top: 30px;
             padding: 20px 10px;
             border-top: 1px solid #ddd;
         }
@@ -261,411 +130,47 @@
         .footer-warn {
             color: #777;
             font-size: 0.75rem;
-            line-height: 1.3;
         }
     </style>
 </head>
 <body>
 
-    <!-- הדר -->
     <header>
         <img src="1.jpg" alt="Logo" class="logo">
         <h1>טיול זוגי שוקרון ברומא</h1>
-        <h2>3-6/8/26</h2>
-        
-        <div class="quick-links">
-            <a href="https://maps.app.goo.gl/bk1Ss7XE8XMUNgqs9" target="_blank" class="quick-link-item"><i class="fas fa-bed"></i> מקום לינה</a>
-            <a href="https://www.accuweather.com/en/it/rome/213490/weather-forecast/213490" target="_blank" class="quick-link-item"><i class="fas fa-cloud-sun"></i> תחזית</a>
-            <a href="https://maps.app.goo.gl/mp5E5uZtMcbos4867" target="_blank" class="quick-link-item"><i class="fas fa-synagogue"></i> מניין (חובה דרכון)</a>
-        </div>
     </header>
 
     <main>
-        <!-- מידע כללי (חלונית פתוחה בראש הלו"ז) -->
-        <div class="day-card" style="border-top-color: var(--gold);">
-            <details open>
-                <summary>מידע כללי וחשוב לטיול</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-euro-sign"></i> מטבע: יורו 1 = 3.5 ש"ח</div>
-                    <div class="info-row"><i class="fas fa-moon"></i> שקיעה: 20:20 (ממוצע)</div>
-                    <div class="info-row"><i class="fas fa-taxi"></i> מוניות: אפליקציות IT Taxi | Free now</div>
-                    <div class="info-row"><i class="fas fa-bus"></i> תחבורה ציבורית: תשלום בנייד 8.5 יורו חופשי יומי</div>
-                </div>
-            </details>
+        <div class="hero-message">
+            <h2>איזה כיף שנהניתם!</h2>
+            <p style="font-size: 1.2rem; color: #555;">נתראה בטיול הבא,</p>
+            <p style="font-weight: 800; color: var(--blue); font-size: 1.3rem;">הדס</p>
         </div>
 
-        <!-- יום שני -->
-        <div class="day-card">
-            <h3 class="day-title">יום שני 3/8</h3>
-            
-            <details>
-                <summary>8:00 - הגעה לשדה</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-plane-departure"></i> טרמינל 1</div>
-                </div>
-            </details>
-                       
-            <details>
-                <summary>10:55 - המראה</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-plane-departure"></i> המראה מהארץ</div>
-                </div>
-            </details>
-            
-            <details>
-                <summary>13:45 - נחיתה</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-plane-arrival"></i> נחיתה ברומא</div>
-                </div>
-            </details>
-
-            <details>
-                <summary>15:00 - יציאה מהשדה</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-info-circle"></i> אפשרויות הגעה לעיר:</div>
-                    <div class="info-row"><i class="fas fa-taxi"></i> מונית למקום הלינה: עלות קבועה של 55 יורו למרכז העיר.</div>
-                    <div class="info-row"><i class="fas fa-train"></i> תחבורה ציבורית (רכבת+אוטובוס): כ-10 יורו לאדם.</div>
-                    <div class="info-row"><i class="fas fa-shuttle-van"></i> הזמנת שאטל מראש: 20 יורו לאדם.</div>
-                    <div class="info-row"><i class="fas fa-link"></i> <a href="https://www.romio.co.il/shuttles/%d7%94%d7%a9%d7%90%d7%98%d7%9c-%d7%94%d7%9e%d7%a9%d7%aa%d7%9c%d7%9d-%d7%91%d7%a8%d7%95%d7%9e%d7%90-%d7%9e%d7%a9%d7%93%d7%94-%d7%94%d7%aa%d7%a2%d7%95%d7%a4%d7%94-%d7%a2%d7%93-%d7%9c%d7%9e%d7%9c%d7%95/" target="_blank" class="nav-link">להזמנת שאטל</a></div>
-                </div>
-            </details>
-
-            <details>
-                <summary>16:30-17:30 - הגעה לדירה</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-suitcase-rolling"></i> מנוחה והתארגנות בדירה.</div>
-                </div>
-            </details>
-
-            <details>
-                <summary>18:00-21:00 - סיור הכרת העיר</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-walking"></i> סיור להכרת העיר בכל המקומות המרכזיים עם הסבר היסטורי עשיר.</div>
-                    <div class="info-row"><i class="fas fa-money-bill-wave"></i> עלות: 49 יורו למשתתף.</div>
-                    <div class="info-row"><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/dL9LRRmEbZkgmqnM6" target="_blank" class="nav-link">ניווט לנקודת ההתחלה</a></div>
-                </div>
-            </details>
-
-            <details>
-                <summary>21:30 - ארוחת ערב</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-utensils"></i> מבחר מסעדות כשרות (פירוט מטה).</div>
-                </div>
-            </details>
-            
-            <details>
-                <summary>22:30 - לילה טוב</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-bed"></i> זמן לישון ולאגור כוחות למחר.</div>
-                </div>
-            </details>
+        <div class="review-box">
+            <h3>נשמח לשמוע איך היה!</h3>
+            <textarea id="reviewText" placeholder="כתבו כאן את החוות דעת שלכם על הטיול..."></textarea>
+            <button class="send-btn" onclick="sendReview()">שליחה לוואטסאפ של הדס <i class="fab fa-whatsapp"></i></button>
         </div>
-
-        <!-- יום שלישי -->
-        <div class="day-card">
-            <h3 class="day-title">יום שלישי 4/8</h3>
-     
-            <details>
-                <summary>7:30 שחרית </summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-hamburger"></i> בית הכנסת הגדול, לא לשכוח דרכון</div>
-                </div>
-            </details>
-
-                <details>
-                <summary>8:00-10:00 ארוחת בוקר</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-hamburger"></i> מבחר מאפים, גבינות וירקות טריים</div>
-                </div>
-            </details>
-           
-            <details>
-                <summary>9:00-12:00 - הפורום הרומי</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-walking"></i> הליכה של כ-25 דק' ברגל ממקום הלינה. המרכז העתיק של רומא.</div>
-                    <div class="info-row"><i class="fas fa-ticket-alt"></i> כניסה עם כרטיס מראש ב-24 שעות לפי הזמנת הקולוסיאום. (24 יורו למשולב).</div>
-                    <div class="info-row"><i class="fas fa-shopping-cart"></i> <a href="https://ticketing.colosseo.it/en/eventi/full-experience/?t=2026-08-04T14%3A45%3A00Z" target="_blank" class="nav-link">לרכישת כרטיסים מראש</a></div>
-                    <div class="info-row"><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/WhoVjfL9vwdYHqWz5" target="_blank" class="nav-link">ניווט לפורום רומא</a></div>
-                    <div class="info-row"><i class="fas fa-flag"></i> <a href="https://maps.app.goo.gl/enR2NyyTDCGnz3ZX9" target="_blank" class="nav-link">התחלה בגבעת פלטין</a></div>
-                    <div class="info-row"><i class="fas fa-map-pin"></i> <a href="https://maps.app.goo.gl/QspQ7FLWbAkLJjDaA" target="_blank" class="nav-link">ירידה לשער טיטוס</a></div>
-                </div>
-            </details>
-
-            <details>
-                <summary>12:30-16:00 - ארוחת צהריים ומנוחה</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-hamburger"></i> זמן חופשי לארוחה והתרעננות.</div>
-                </div>
-            </details>
-
-            <details>
-                <summary>16:30-18:00 - הקולוסיאום</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-landmark"></i> כניסה עם כרטיס מראש. שעת הכניסה לקולוסיאום מדוייקת וחובה להגיע 5 דק' לפני!</div>
-                    <div class="info-row"><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/fyV9c4Lbm2D6ZpNg9" target="_blank" class="nav-link">ניווט לקולוסיאום</a></div>
-                </div>
-            </details>
-
-            <details>
-                <summary>18:00-20:00 - טראסטוורה הציורית</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-camera"></i> מהקולוסאום סיור עצמאי ברחובות טראסטורה הקסומים עם חנויות אומנות מקומית, סיום בגטו היהודי.</div>
-                    <div class="info-row"><i class="fas fa-route"></i> <a href="https://maps.app.goo.gl/Fp7gAQept6q82B6T8" target="_blank" class="nav-link">ניווט למסלול המלא</a></div>
-                </div>
-            </details>
-
-            <details>
-                <summary>20:00 - מנחה וערבית</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-book-open"></i> בית הכנסת הגדול.</div>
-                </div>
-            </details>
-
-            <details>
-                <summary>20:00-21:00 - גבעת ג'אניקולו (אופציונלי)</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-binoculars"></i> תצפית יפה על העיר, בקצה שכונת טראסטוורה.</div>
-                    <div class="info-row"><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/jz8VyGdmS6PAzGE1A" target="_blank" class="nav-link">ניווט לתצפית</a></div>
-                </div>
-            </details>
-
-            <details>
-                <summary>21:30 - ארוחת ערב</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-utensils"></i> מבחר מסעדות כשרות (פירוט מטה).</div>
-                </div>
-            </details>
-     
-            <details>
-                <summary>22:30-23:00 - תצפית על הקולוסיאום בלילה (אופציונלי)</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-binoculars"></i> תצפית יפה על הקולוסיאום, מואר יפהפה בלילה.</div>
-                    <div class="info-row"><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/e5CQYxr8g8GpA9Zu6" target="_blank" class="nav-link">ניווט לתצפית</a></div>
-                </div>
-            </details>
-
-            <details>
-                <summary>22:30 - לילה טוב</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-bed"></i> זמן לישון.</div>
-                </div>
-            </details>
-        </div>
-
-        <!-- יום רביעי -->
-        <div class="day-card">
-            <h3 class="day-title">יום רביעי 5/8</h3>
-            
-            <details>
-                <summary>7:30 שחרית </summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-hamburger"></i> בית הכנסת הגדול, לא לשכוח דרכון</div>
-                </div>
-            </details>
-
-                <details>
-                <summary>8:00-10:00 ארוחת בוקר</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-hamburger"></i> מבחר מאפים, גבינות וירקות טריים</div>
-                </div>
-            </details>
-            
-            <details>
-                <summary>9:00-11:00 - שוק קמפו ד'פיורי</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-store"></i> השוק המקומי המרכזי ברומא - ססגוני, צבעוני, מלא טעמים וריחות.</div>
-                    <div class="info-row"><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/eSFxrhTPohEHxzor5" target="_blank" class="nav-link">ניווט לשוק</a></div>
-                </div>
-            </details>
-
-            <details>
-                <summary>11:00-12:00 - רחובות רומא (אופציונלי)</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-shoe-prints"></i> מהשוק חזרה רגלית למקום הלינה דרך רחובות החנויות המפורסמות ברומא.</div>
-                    <div class="info-row"><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/3GJCF3HToEqcjgMJ6" target="_blank" class="nav-link">ניווט לרחובות</a></div>
-                </div>
-            </details>
-
-            <details>
-                <summary>12:00-14:00 - ארוחת צהריים ומנוחה</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-chair"></i> הפסקה.</div>
-                </div>
-            </details>
-
-            <details>
-                <summary>15:00-18:00 - קניון מקסימו</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-shopping-bag"></i> קניון גדול עם סניף פריימארק מרשים וממוזג. נסיעה של כ-40 דקות ממרכז העיר.</div>
-                    <div class="info-row"><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/jjNRMCUMZVekqQTX6" target="_blank" class="nav-link">ניווט לקניון</a></div>
-                </div>
-            </details>
-
-            <details>
-                <summary>18:00-19:30 - וילה בורגוזה והמדרגות הספרדיות</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-tree"></i> סיור עצמאי. גנים יפים ואפשרות לשייט בסירת משוטים. השייט פתוח 9:00-19:00, עלות 5 יורו לאדם ל-20 דק'.</div>
-                    <div class="info-row"><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/JAeHKae98WjDQC5j9" target="_blank" class="nav-link">המדרגות הספרדיות</a></div>
-                    <div class="info-row"><i class="fas fa-binoculars"></i> <a href="https://maps.app.goo.gl/ToHw2XR72v4pZidH9" target="_blank" class="nav-link">תצפית יפה על רומא</a></div>
-                    <div class="info-row"><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/51MV5G8VfCULQKUi8" target="_blank" class="nav-link">וילה בורגוזה</a></div>
-                </div>
-            </details>
-
-            <details>
-                <summary>20:00 - מנחה וערבית</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-book-open"></i> בית הכנסת הגדול.</div>
-                </div>
-            </details>
-
-            <details>
-                <summary>21:00 - ארוחת ערב</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-utensils"></i> מבחר מסעדות כשרות.</div>
-                </div>
-            </details>
-
-            <details>
-                <summary>20:30-22:00 - סיור ברומא הלילית (אופציונלי)</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-moon"></i> סיור רגלי לצד המומנטים הגדולים מוארים: פיאצה נבונה, הפנתיאון, מזרקת טרווי, פיאצה ונציה, וחזרה.</div>
-                    <div class="info-row"><i class="fas fa-route"></i> <a href="https://maps.app.goo.gl/DpicPsyfbKbQNccJ8" target="_blank" class="nav-link">הסיור המלא מפה</a></div>
-                </div>
-            </details>
-
-            <details>
-                <summary>22:30 - לילה טוב</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-bed"></i> סיום היום.</div>
-                </div>
-            </details>
-        </div>
-
-        <!-- יום חמישי -->
-        <div class="day-card">
-            <h3 class="day-title">יום חמישי 6/8</h3>
-            
-            <details>
-                <summary>6:30 - יציאה לשדה</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-taxi"></i> חזרה הביתה.</div>
-                </div>
-            </details>
-
-            <details>
-                <summary>10:00 - המראה</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-plane-departure"></i> טיסה לארץ.</div>
-                </div>
-            </details>
-
-            <details>
-                <summary>14:20 - נחיתה</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-plane-arrival"></i> ברוכים השבים!</div>
-                </div>
-            </details>
-        </div>
-
-        <!-- מסעדות כשרות -->
-        <div class="day-card">
-            <h3 class="day-title">מסעדות כשרות ברומא</h3>
-            
-            <details>
-                <summary>Pasticceria Boccione (עוגות מסורתית)</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-info-circle"></i> חלבי/פרווה.</div>
-                    <div class="info-row"><i class="fas fa-clock"></i> פתוח: 7:30-19:00.</div>
-                    <div class="info-row"><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/jDrr4aEC8JoM6v9W6" target="_blank" class="nav-link">ניווט למקום</a></div>
-                </div>
-            </details>
-
-            <details>
-                <summary>באגטו מילקי (Baghetto Milky)</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-info-circle"></i> מהדרין חלבי. מומלץ להזמין מקום!</div>
-                    <div class="info-row"><i class="fas fa-clock"></i> פתוח: 11:00-23:00.</div>
-                    <div class="info-row"><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/ngErwRnC925m93vg6" target="_blank" class="nav-link">ניווט למקום</a></div>
-                </div>
-            </details>
-
-            <details>
-                <summary>יוטבתה (Yotvata)</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-info-circle"></i> מהדרין חלבי. מומלץ להזמין מקום!</div>
-                    <div class="info-row"><i class="fas fa-clock"></i> פתוח: 12:00-23:00 (סגור בצהריים 15:00-18:30).</div>
-                    <div class="info-row"><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/yq3MQhngrMwUAghN9" target="_blank" class="nav-link">ניווט למקום</a></div>
-                </div>
-            </details>
-
-                 <details>
-                <summary>בונה פיצה</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-info-circle"></i> מבחר פיצות איטלקיות.</div>
-                    <div class="info-row"><i class="fas fa-clock"></i> פתוח: 7:30-21:30.</div>
-                    <div class="info-row"><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/R7n4Q3yWubqJ6uQZ6" target="_blank" class="nav-link">ניווט למקום</a></div>
-                </div>
-            </details>
-  
-             <details>
-                <summary>Casalino Osteria Kosher</summary>
-                <div class="details-content">
-                    <div class="info-row"><i class="fas fa-info-circle"></i> חלבי (יש לבדוק אילו מנות הן מהדרין חלב ישראל).</div>
-                    <div class="info-row"><i class="fas fa-clock"></i> פתוח: 10:00-23:00.</div>
-                    <div class="info-row"><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/nfNhY5knqYJqQCM5A" target="_blank" class="nav-link">ניווט למקום</a></div>
-                </div>
-            </details>
-        </div>
-
-      
-        <!-- טבלת עלויות -->
-        <div class="cost-table-wrapper">
-            <h3>טבלת עלויות לאדם</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>פירוט</th>
-                        <th>יורו (€)</th>
-                        <th>שקלים (₪)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>סיור הכרת העיר</td>
-                        <td>49€</td>
-                        <td>171.5₪</td>
-                    </tr>
-                    <tr>
-                        <td>קולוסיאום + פורום</td>
-                        <td>24€</td>
-                        <td>84₪</td>
-                    </tr>
-                    <tr>
-                        <td>שאטל מנמל התעופה</td>
-                        <td>20€</td>
-                        <td>70₪</td>
-                    </tr>
-                    <tr>
-                        <td>תח"צ חופשי יומי (ליום)</td>
-                        <td>8.5€</td>
-                        <td>29.75₪</td>
-                    </tr>
-                    <tr>
-                        <td>שייט סירות (וילה בורגוזה)</td>
-                        <td>5€</td>
-                        <td>17.5₪</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
     </main>
 
-    <!-- חתימה -->
     <footer>
         <div class="footer-sig">כל הזכויות שמורות להדס טרכטר - יועצת טיולים בארץ ובעולם 050-5685356.</div>
         <div class="footer-warn">אין להעביר ללא אישור מפורש. העובר על כך עובר על גזל לפי דין תורה וחוקי המקום.</div>
     </footer>
+
+    <script>
+        function sendReview() {
+            const review = document.getElementById('reviewText').value;
+            if (review.trim() === "") {
+                alert("נא לכתוב חוות דעת לפני השליחה");
+                return;
+            }
+            const phone = "972505685356";
+            const message = encodeURIComponent("היי הדס, חזרנו מהטיול ברומא ורציתי לשתף בחוות דעת: " + review);
+            window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+        }
+    </script>
 
 </body>
 </html>
